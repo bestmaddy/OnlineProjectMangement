@@ -1,0 +1,19 @@
+.fromdiv {
+
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    background: rgba(248, 199, 199, 0.294);
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 5px rgba(255, 255, 255, 0.2), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}

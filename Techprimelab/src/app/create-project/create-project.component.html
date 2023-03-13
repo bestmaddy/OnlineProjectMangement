@@ -1,0 +1,183 @@
+<div class="fromdiv">
+    <form class="row g-3" #ProjectForm="ngForm" (ngSubmit)="CreateProject(ProjectForm)">
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Project Name</label>
+            <select id="userrole" class="form-select" name="ProjectName" #ProjectName="ngModel"
+                [(ngModel)]="creatProjectdto.ProjectName" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!ProjectName?.valid && (ProjectName?.dirty || ProjectName?.touched)">
+                <div *ngIf="ProjectName.errors?.['required']">
+                    ProjectName is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Reason</label>
+            <select id="userrole" class="form-select" name="Reason" #Reason="ngModel"
+                [(ngModel)]="creatProjectdto.Reason" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Reason?.valid && (Reason?.dirty || Reason?.touched)">
+                <div *ngIf="Reason.errors?.['required']">
+                    Reason is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Category</label>
+            <select id="userrole" class="form-select" name="Category" #Category="ngModel"
+                [(ngModel)]="creatProjectdto.Category" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Category?.valid && (Category?.dirty || Category?.touched)">
+                <div *ngIf="Category.errors?.['required']">
+                    Category is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Dept</label>
+            <select id="userrole" class="form-select" name="Dept" #Dept="ngModel" [(ngModel)]="creatProjectdto.Dept"
+                required>
+                <option>Str</option>
+                <option>Fin</option>
+                <option>Qlt</option>
+                <option>Man</option>
+                <option>Sto</option>
+                <option>Hr</option>
+            </select>
+            <div *ngIf="!Dept?.valid && (Dept?.dirty || Dept?.touched)">
+                <div *ngIf="Dept.errors?.['required']">
+                    Dept is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Division</label>
+            <select id="userrole" class="form-select" name="Division" #Division="ngModel"
+                [(ngModel)]="creatProjectdto.Division" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Division?.valid && (Division?.dirty || Division?.touched)">
+                <div *ngIf="Division.errors?.['required']">
+                    Division is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Location</label>
+            <select id="userrole" class="form-select" name="Location" #Location="ngModel"
+                [(ngModel)]="creatProjectdto.Location" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Location?.valid && (Location?.dirty || Location?.touched)">
+                <div *ngIf="Location.errors?.['required']">
+                    Location is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Priority</label>
+            <select id="userrole" class="form-select" name="Priority" #Priority="ngModel"
+                [(ngModel)]="creatProjectdto.Priority" required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Priority?.valid && (Priority?.dirty || Priority?.touched)">
+                <div *ngIf="Priority.errors?.['required']">
+                    Priority is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Type</label>
+            <select id="userrole" class="form-select" name="Type" #Type="ngModel" [(ngModel)]="creatProjectdto.Type"
+                required>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Engineer</option>
+                <option>Team Manager</option>
+                <option>Others</option>
+                <option>Asset Manager</option>
+                <option>Gate Security Incharge</option>
+            </select>
+            <div *ngIf="!Type?.valid && (Type?.dirty || Type?.touched)">
+                <div *ngIf="Type.errors?.['required']">
+                    Type is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Start Date</label>
+            <input type="date" name="StartDate" #StartDate="ngModel" class="form-select"
+                [(ngModel)]="creatProjectdto.StartDate" id="" required>
+            <div *ngIf="!StartDate?.valid && (StartDate?.dirty || StartDate?.touched)">
+                <div *ngIf="StartDate.errors?.['required']">
+                    StartDate is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">End Date</label>
+            <input type="date" name="EndDate" #EndDate="ngModel" class="form-select"
+                [(ngModel)]="creatProjectdto.EndDate" id="" required>
+            <div *ngIf="!EndDate?.valid && (EndDate?.dirty || EndDate?.touched)">
+                <div *ngIf="EndDate.errors?.['required']">
+                    EndDate is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Status</label>
+            <select id="userrole" class="form-select" name="Status" #Status="ngModel"
+                [(ngModel)]="creatProjectdto.Status" required>
+                <option [ngValue]="c.Status" *ngFor="let c of tatus">{{c.Status}}</option>
+            </select>
+            <div *ngIf="!Status?.valid && (Status?.dirty || Status?.touched)">
+                <div *ngIf="Status.errors?.['required']">
+                    Status is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 col-md-12 d-flex align-items-center justify-content-center">
+            <button type="button" class="btn btn-danger cancle me-2" (click)="reset(ProjectForm)">Clear</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!ProjectForm.valid">Save</button>
+        </div>
+    </form>
+</div>

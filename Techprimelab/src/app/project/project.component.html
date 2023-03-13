@@ -1,0 +1,79 @@
+<div class="container-fluid mb-3 mt-2">
+    <div class="row justify-content-around">
+        <div class="col-3">
+            <input class="form-select" type="text" name="searchTerm" placeholder="Filter by country name"
+                [(ngModel)]="searchText" (input)="search(searchText)" />
+        </div>
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <div>
+                <label class="form-label me-2">Sort By</label>
+            </div>
+            <div>
+                <select id="userrole" class="form-select" name="Type" #Type="ngModel" [(ngModel)]="SortBy"
+                    (change)="SortByFun(SortBy)" required>
+                    <option>ProjectName</option>
+                    <option>Reason</option>
+                    <option>Type</option>
+                    <option>Division</option>
+                    <option>Category</option>
+                    <option>Priority</option>
+                    <option>Dept</option>
+                    <option>Location</option>
+                    <option>Status</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="text-center justify-content-center table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>ProjectName</th>
+            <th>Reason</th>
+            <th>Category</th>
+            <th>Dept</th>
+            <th>Division </th>
+            <th>Location</th>
+            <th>Priority</th>
+            <th>Type</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let users of Projectdata | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+            let i = index">
+            <th>{{i+1}}</th>
+            <td>{{users.ProjectName}}</td>
+            <td>{{users.Reason}}</td>
+            <td>{{users.Category}}</td>
+            <td>{{users.Dept}}</td>
+            <td>{{users.Division}}</td>
+            <td>{{users.Location}}</td>
+            <td>{{users.Priority}}</td>
+            <td>{{users.Type}}</td>
+            <td>{{users.StartDate}}</td>
+            <td>{{users.EndDate}}</td>
+            <td>{{users.Status}}</td>
+            <td>
+                <button type="button" class="btn btn-primary me-2"
+                    (click)="ChangeStatus(users,'Running')">Start</button>
+                <button type="button" class="btn btn-secondary me-2"
+                    (click)="ChangeStatus(users,'Closed')">Close</button>
+                <button type="button" class="btn btn-success" (click)="ChangeStatus(users,'Cancelled')">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>

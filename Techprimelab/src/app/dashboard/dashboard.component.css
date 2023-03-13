@@ -1,0 +1,14 @@
+.card-dash {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 15%;
+    margin: 10px;
+    background: #f8c7c7;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,77 @@
+<div class="container-fluid loginout text-center">
+  <div class="row logindiv">
+    <div class="col-md-6 loginimg">
+      <img src="../../assets/loinimg.png" alt="Login images" srcset="" class="">
+    </div>
+    <div class="col-md-6">
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <legend class="" style="color: #3226ae; font-size: 4vh;"><b>Welcome Back </b></legend>
+        <div class="mb-3">
+          <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+          <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="logindto.userName"
+            #userName="ngModel" name="userName" required email aria-describedby="emailHelp"
+            placeholder="Enter Your Email">
+          <div *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)">
+            <div *ngIf="userName.errors?.['required']">
+              User Name is required
+            </div>
+            <div *ngIf="userName.errors?.['email']">
+              Enter valid Email
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+          <input type="password" class="form-control" id="exampleInputPassword1" #password="ngModel"
+            [(ngModel)]="logindto.password" name="password" required placeholder="Password">
+          <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error">
+            <div *ngIf="password.errors?.['required']">
+              password is required
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+        <!-- <button type="submit" class="save mb-5">Login</button> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- 
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="logindto.userName"
+        #userName="ngModel" name="userName" required email aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <div *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)">
+        <div *ngIf="userName.errors?.['required']">
+          User Name is required
+        </div>
+        <div *ngIf="userName.errors?.['email']">
+          Enter valid Email
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" #password="ngModel"
+        [(ngModel)]="logindto.password" name="password" required minlength="8">
+
+      <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error">
+        <div *ngIf="password.errors?.['required']">
+          password is required
+        </div>
+        <div *ngIf="password.errors?.['minlength']">
+          password Minimum Length is {{password.errors?.['minlength']?.requiredLength}}
+        </div>
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div> -->
