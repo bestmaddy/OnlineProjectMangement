@@ -1,38 +1,47 @@
-<div class="card-dash">
-    <div class="card">
-        <div class="card-header">
-            Total Project
+<div class="container-fluid mt-4">
+    <div class="row justify-content-evenly">
+        <div class="col-md-3">
+            <div class="card dash-card">
+                <div class="card-header">
+                    Total Project
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text card-title">{{TotalProject}}</h5>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">{{TotalProject}}</h5>
+        <div class="col-md-3">
+            <div class="card dash-card">
+                <div class="card-header">
+                    Running Project
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text card-title">{{RunningProject?.length}}</h5>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Running Project
+        <div class="col-md-3">
+            <div class="card dash-card">
+                <div class="card-header">
+                    Closed Project
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text card-title">{{ClosedProject?.length}}</h5>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">{{RunningProject?.length}}</h5>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Closed Project
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">{{ClosedProject?.length}}</h5>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Cancelled Project
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">{{CancelledProject?.length}}</h5>
+        <div class="col-md-3">
+            <div class="card dash-card">
+                <div class="card-header">
+                    Cancelled Project
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text card-title">{{CancelledProject?.length}}</h5>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="chart">
-    <canvasjs-chart [options]="chart" class="" [styles]="{width: '100%', height:'auto'}"></canvasjs-chart>  
+<div class="">
+    <canvasjs-chart [options]="chart" class="" [styles]="{width: '100%', height:'auto'}"></canvasjs-chart>
 </div>
-    

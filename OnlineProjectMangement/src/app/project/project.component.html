@@ -1,4 +1,11 @@
-<div class="container-fluid mb-3 mt-2">
+<div class="material">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <legend><b>Project Table</b></legend>
+        </div>
+    </div>
+</div>
+<div class="material">
     <div class="row justify-content-around">
         <div class="col-3">
             <input class="form-select" type="text" name="searchTerm" placeholder="Filter by country name"
@@ -24,56 +31,59 @@
             </div>
         </div>
     </div>
-</div>
-
-<table class="text-center justify-content-center table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Sr No</th>
-            <th>ProjectName</th>
-            <th>Reason</th>
-            <th>Category</th>
-            <th>Dept</th>
-            <th>Division </th>
-            <th>Location</th>
-            <th>Priority</th>
-            <th>Type</th>
-            <th>StartDate</th>
-            <th>EndDate</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let users of Projectdata | paginate
+    <div class="material-tbl mt-2">
+        <table class="text-center justify-content-center table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>ProjectName</th>
+                    <th>Reason</th>
+                    <th>Category</th>
+                    <th>Dept</th>
+                    <th>Division </th>
+                    <th>Location</th>
+                    <th>Priority</th>
+                    <th>Type</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let users of Projectdata | paginate
         : {
             itemsPerPage: tableSize,
             currentPage: page,
             totalItems: count
           };
             let i = index">
-            <th>{{i+1}}</th>
-            <td>{{users.ProjectName}}</td>
-            <td>{{users.Reason}}</td>
-            <td>{{users.Category}}</td>
-            <td>{{users.Dept}}</td>
-            <td>{{users.Division}}</td>
-            <td>{{users.Location}}</td>
-            <td>{{users.Priority}}</td>
-            <td>{{users.Type}}</td>
-            <td>{{users.StartDate}}</td>
-            <td>{{users.EndDate}}</td>
-            <td>{{users.Status}}</td>
-            <td>
-                <button type="button" class="btn btn-primary me-2"
-                    (click)="ChangeStatus(users,'Running')">Start</button>
-                <button type="button" class="btn btn-secondary me-2"
-                    (click)="ChangeStatus(users,'Closed')">Close</button>
-                <button type="button" class="btn btn-success" (click)="ChangeStatus(users,'Cancelled')">Cancel</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<div class="d-flex justify-content-center">
-    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-    </pagination-controls>
+                    <th>{{i+1}}</th>
+                    <td>{{users.ProjectName}}</td>
+                    <td>{{users.Reason}}</td>
+                    <td>{{users.Category}}</td>
+                    <td>{{users.Dept}}</td>
+                    <td>{{users.Division}}</td>
+                    <td>{{users.Location}}</td>
+                    <td>{{users.Priority}}</td>
+                    <td>{{users.Type}}</td>
+                    <td>{{users.StartDate}}</td>
+                    <td>{{users.EndDate}}</td>
+                    <td>{{users.Status}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary me-2"
+                            (click)="ChangeStatus(users,'Running')">Start</button>
+                        <button type="button" class="btn btn-secondary me-2"
+                            (click)="ChangeStatus(users,'Closed')">Close</button>
+                        <button type="button" class="btn btn-success"
+                            (click)="ChangeStatus(users,'Cancelled')">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <div class="d-flex justify-content-center mt-3">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+</div>

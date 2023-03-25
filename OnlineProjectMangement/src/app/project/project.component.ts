@@ -10,7 +10,7 @@ export class ProjectComponent implements OnInit {
   Projectdata: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 5;
+  tableSize: number = 10;
   tableSizes: any = [3, 6, 9, 12];
   searchText!: '';
   searchData: any;

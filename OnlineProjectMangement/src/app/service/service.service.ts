@@ -3,6 +3,13 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
 import { io, Socket } from 'socket.io-client';
+import { Nav } from '../modules/nav';
+
+const nav: Nav[] = [
+  { id: 1, name: "Dashboard", selected: false, path:"/layout/dashboard", icon:"bi bi-speedometer2" },
+  { id: 2, name: "Project", selected: false, path:"/layout/project", icon:"bi bi-columns-gap"},
+  { id: 3, name: "Create", selected: false, path:"/layout/create", icon:"bi bi-receipt" },
+]
 
 @Injectable({
   providedIn: 'root'
@@ -38,11 +45,14 @@ export class ServiceService {
     let user = sessionStorage.getItem('authuser');
     return !(user === null)
   }
-  
+
   logout() {
     sessionStorage.removeItem('authuser');
     this.toastr.success('You LogOut')
+  }
 
+  nav_fun() {
+    return nav;
   }
 
   sendMessage(header: any, args: any): void {

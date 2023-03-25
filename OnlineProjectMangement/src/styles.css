@@ -21,6 +21,7 @@ body {
     box-sizing: initial;
     border-left: 5px solid #3226ae;
     background: #3226ae;
+    backdrop-filter: blur(15px);
     transition: width 1s;
     justify-content: center;
     z-index: 500;
@@ -140,6 +141,10 @@ body {
     line-height: 60px;
     white-space: normal;
     font-size: 1.5vw;
+}
+.hid{
+    display: none;
+    transition: 1s;
 }
 
 .navigation ul li a .aro {
@@ -634,7 +639,6 @@ body {
     font-size: 15px;
     border: 1px solid #3226ae;
     background: #e9e7e7;
-
 }
 
 .material select option {
@@ -645,12 +649,11 @@ body {
 .material-tbl {
     overflow-x: auto;
     width: 100%;
-    height: 90%;
+    height: max-content;
 }
 
 .material-tbl table {
-    width: 120%;
-    height: 10%;
+    width: max-content;
 }
 
 .material-tbl table th {

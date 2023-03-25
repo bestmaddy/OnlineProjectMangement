@@ -8,7 +8,7 @@ import { ProjectComponent } from 'src/app/project/project.component';
 
 const routes: Routes = [
   {
-    path: '', component: NavComponent,
+    path: '', component: LayoutComponent,
     children: [
       { path: 'project', component: ProjectComponent },
       { path: 'dashboard', component: DashboardComponent },
