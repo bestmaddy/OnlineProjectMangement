@@ -36,11 +36,6 @@ export class DashboardComponent implements OnInit {
       this.ClosedProject = val.filter(((e: { Status: string; }) => e.Status == "Closed"))
       this.CancelledProject = val.filter(((e: { Status: string; }) => e.Status == "Cancelled"))
 
-      
-      this.RunningProject = val.filter(((e: { Status: string; }) =>
-       e.Status == "Running"
-       ))
-
 
       this.str = val.filter(((e: { Dept: string; }) => e.Dept == "Str"))
       this.strClosed = val.filter(((e: { Status: string; Dept: string; }) => e.Status == "Closed" && e.Dept == "Str"))
@@ -64,10 +59,6 @@ export class DashboardComponent implements OnInit {
       this.chart.data[1].dataPoints[1].y = this.strClosed?.length;
       this.chart.data[1].dataPoints[2].y = this.qltClosed?.length;
       this.chart.data[1].dataPoints[3].y = this.finClosed?.length;
-
-
-      // this.chartFun();
-
     }))
 
   }
@@ -115,7 +106,7 @@ export class DashboardComponent implements OnInit {
     //  largest no program
     var arr = [3, 6, 2, 56, 32, 5, 89, 32];
     var largest = arr[0];
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (largest < arr[i]) {
         largest = arr[i];
       }

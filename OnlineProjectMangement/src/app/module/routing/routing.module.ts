@@ -9,10 +9,13 @@ import { NavComponent } from 'src/app/nav/nav.component';
 import { ProjectComponent } from 'src/app/project/project.component';
 import { SearchFilterPipe } from 'src/app/search-filter.pipe';
 import { CanvasJSChart } from 'src/assets/canvasjs.angular.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
+import { EmployeeComponent } from 'src/app/employee/employee.component';
+import { OrderByPipe } from 'src/app/pipes/orderByPipe';
+import { ProductComponent } from 'src/app/product/product.component';
 
 
 @NgModule({
@@ -22,8 +25,11 @@ import { ToastrModule } from 'ngx-toastr';
     CreateProjectComponent,
     LayoutComponent,
     NavComponent,
+    ProductComponent,
     SearchFilterPipe,
+    EmployeeComponent,
     CanvasJSChart,
+    OrderByPipe
   ],
   imports: [
     CommonModule,
@@ -32,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     NgxPaginationModule,
     ToastrModule.forRoot(),
     // BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class RoutingModule { }

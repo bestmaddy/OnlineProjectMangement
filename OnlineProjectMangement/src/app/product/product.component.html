@@ -1,0 +1,107 @@
+<div class="material">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <legend><b>Product Table</b></legend>
+        </div>
+    </div>
+</div>
+<div class="material">
+    <div class="material-tbl mt-2">
+        <table class="text-center justify-content-center table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Product Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th (click)="PlusClick()"><i class="bi bi-plus"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productData | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+            let i = index" [ngClass]="product.y<100?'red':''">
+                    <th>{{i+1}}</th>
+                    <th><img [src]="product.path" alt="img" style="height: 40px;"></th>
+                    <td>{{product.title}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.qty}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.date}}</td>
+                    <td (click)="PlusClick()"><i class="bi bi-plus"></i></td>
+                </tr>
+                <tr *ngIf="ShowRow">
+                    <td></td>
+                    <td>
+                        <input type="file" placeholder="Image" [(ngModel)]="productDto.path" name="path" #path="ngModel"
+                            required (change)="SelectImage($event)">
+                        <div *ngIf="!path?.valid && (path?.dirty || path?.touched)">
+                            <div *ngIf="path.errors?.['required']">
+                                Image is required
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Title" [(ngModel)]="productDto.title" name="title"
+                            #title="ngModel" required>
+                        <div *ngIf="!title?.valid && (title?.dirty || title?.touched)">
+                            <div *ngIf="title.errors?.['required']">
+                                title is required
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea rows="5" type="textarea" placeholder="Description" [(ngModel)]="productDto.description"
+                            name="description" #description="ngModel" required maxlength="125"></textarea>
+                        <div *ngIf="!description?.valid && (description?.dirty || description?.touched)">
+                            <div *ngIf="description.errors?.['required']">
+                                description is required
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Qty" [(ngModel)]="productDto.qty" name="qty" #qty="ngModel"
+                            required>
+                        <div *ngIf="!qty?.valid && (qty?.dirty || qty?.touched)">
+                            <div *ngIf="qty.errors?.['required']">
+                                qty is required
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" placeholder="price" [(ngModel)]="productDto.price" name="price"
+                            #price="ngModel" required>
+                        <div *ngIf="!price?.valid && (price?.dirty || price?.touched)">
+                            <div *ngIf="price.errors?.['required']">
+                                price is required
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="date" placeholder="date" [(ngModel)]="productDto.date" name="date" #date="ngModel"
+                            required>
+                        <div *ngIf="!date?.valid && (date?.dirty || date?.touched)">
+                            <div *ngIf="date.errors?.['required']">
+                                date is required
+                            </div>
+                        </div>
+                    </td>
+                    <td (click)="DashClick()"><i class="bi bi-dash"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary mt-2" (click)="SaveProduct(productDto)">Save</button>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+    </div>
