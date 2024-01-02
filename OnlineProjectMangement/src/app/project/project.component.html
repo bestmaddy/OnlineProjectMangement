@@ -1,7 +1,7 @@
 <div class="material">
     <div class="row align-items-center">
         <div class="col-6">
-            <legend><b>Project Table</b></legend>
+            <legend><b>View Project</b></legend>
         </div>
     </div>
 </div>
@@ -13,12 +13,12 @@
         </div>
         <div class="col-3 d-flex justify-content-center align-items-center">
             <div>
-                <label class="form-label me-2">Sort By</label>
+                <label class="form-label me-2 mb-0 fs-5">Sort By</label>
             </div>
             <div>
                 <select id="userrole" class="form-select" name="Type" #Type="ngModel" [(ngModel)]="SortBy"
                     (change)="SortByFun(SortBy)" required>
-                    <option>ProjectName</option>
+                    <option >ProjectName</option>
                     <option>Reason</option>
                     <option>Type</option>
                     <option>Division</option>

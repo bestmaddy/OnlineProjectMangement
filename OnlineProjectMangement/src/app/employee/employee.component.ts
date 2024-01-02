@@ -27,10 +27,10 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData(this.getChart)
+    this.getData()
   }
 
-  getData(chart: any) {
+  getData() {
     this.service.getAll().subscribe(data => {
       console.log("data", data);
       let ans: any[] = [];
@@ -46,7 +46,7 @@ export class EmployeeComponent implements OnInit {
         ans.push({ "y": v, "name": k });
       });
       this.empDetails = ans
-      chart(this.empDetails);
+      this.getChart(this.empDetails);
       // this.chartOptions.data.dataPoints = this.empDetails;
 
     })

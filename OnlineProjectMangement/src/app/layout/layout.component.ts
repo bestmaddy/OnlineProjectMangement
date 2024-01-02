@@ -13,8 +13,15 @@ export class LayoutComponent implements OnInit {
   isShow: boolean = true;
   nav!: Nav[];
   isSideBarActive: boolean = false;
-
+  isUserActive: boolean = false;
+  Username!:any;
+  UsernamePar!:any;
+  UserName!:string;
   constructor(private service: ServiceService, private el: ElementRef, private renderer: Renderer2) {
+    this.UsernamePar = sessionStorage.getItem('authuser');
+    this.Username = JSON.parse(this.UsernamePar);
+    console.log("this.Username",this.Username.data[0].UserName)
+    this.UserName = this.Username.data[0].UserName;
 
   }
 
@@ -26,6 +33,10 @@ export class LayoutComponent implements OnInit {
   togglesideBar() {
     console.log("toggle")
     this.isSideBarActive = !this.isSideBarActive;
+  }
+
+  userprofile(){
+    this.isUserActive = !this.isUserActive;
   }
 
   userlogout() {

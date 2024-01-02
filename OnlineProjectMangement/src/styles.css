@@ -23,9 +23,13 @@ body {
     border-left: 5px solid #3226ae;
     background: #3226ae;
     backdrop-filter: blur(15px);
-    transition: width 1s;
+    -o-transition: width 0.5s;
     justify-content: center;
     z-index: 500;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    transition: width 0.5s;
 }
 
 .navigation.active {
@@ -61,7 +65,11 @@ body {
     color: #fff;
     align-items: center;
     justify-content: left;
-    transition: 1s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .navigation ul li a:hover {
@@ -131,7 +139,7 @@ body {
     height: 60px;
     line-height: 60px;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
 }
 
 .navigation ul li a .title {
@@ -141,11 +149,15 @@ body {
     height: 60px;
     line-height: 60px;
     white-space: normal;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
 }
 .hid{
     display: none;
-    transition: 1s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .navigation ul li a .aro {
@@ -155,7 +167,7 @@ body {
     line-height: 60px;
     right: 10px;
     text-align: right;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
 
 }
 
@@ -243,14 +255,22 @@ body {
 .logo span img {
     align-items: center;
     height: 50px;
-    transition: 1s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .logo.active {
     margin-top: 10px;
-    transition: 1s;
+    -o-transition: 0.5s;
     display: none;
     height: 45px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 
@@ -355,7 +375,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .user-profile.active {
@@ -364,11 +388,15 @@ body {
 }
 
 .user-profile i {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     color: #e9e7e7;
     cursor: pointer;
     margin: auto;
-    transition: 1s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .user-profile i:hover {
@@ -410,9 +438,13 @@ body {
     width: 200px;
     box-sizing: 0 5px 25px rgb(0, 0, 0, 0.1);
     border-radius: 10px;
-    transition: 0.5s;
+    -o-transition: 0.5s;
     visibility: hidden;
     opacity: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .user-menu::before {
@@ -454,8 +486,12 @@ body {
 .user-menu ul li i {
     font-size: 20px;
     margin-right: 10px;
-    transition: 0.5s;
+    -o-transition: 0.5s;
     color: #fff;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .user-menu ul li:hover i {
@@ -467,6 +503,10 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -518,8 +558,11 @@ body {
     width: calc(100% - 23%);
     height: calc(100% - 75px);
     top: 70px;
-    transition: 1s;
-    /* background: #2196F3; */
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .home_page.active {
@@ -578,6 +621,10 @@ body {
 
 .dash_notification:hover {
     width: 100%;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -710,7 +757,7 @@ body {
     background: #3226ae;
     border: none;
     color: #fff;
-    font-size: 1vw;
+    font-size: 1rem;
     height: 32px;
     min-width: 80px;
     padding: 5px;
@@ -740,6 +787,10 @@ body {
 
 ::-webkit-scrollbar:hover {
     width: 10px;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
     transition: 0.5s;
 }
 

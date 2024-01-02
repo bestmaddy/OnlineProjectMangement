@@ -5,14 +5,13 @@ import { catchError, Observable, Subject, throwError } from 'rxjs';
 import { io, Socket } from 'socket.io-client';
 import { Nav } from '../modules/nav';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { productDto } from '../product/product.component';
 
 const nav: Nav[] = [
   { id: 1, name: "Dashboard", selected: false, path: "/layout/dashboard", icon: "bi bi-speedometer2" },
-  { id: 2, name: "Project", selected: false, path: "/layout/project", icon: "bi bi-columns-gap" },
-  { id: 3, name: "Create", selected: false, path: "/layout/create", icon: "bi bi-receipt" },
-  { id: 4, name: "Employee", selected: false, path: "/layout/emp", icon: "bi bi-receipt" },
-  { id: 5, name: "Product", selected: false, path: "/layout/product", icon: "bi bi-receipt" },
+  { id: 2, name: "View Project", selected: false, path: "/layout/project", icon: "bi bi-columns-gap" },
+  { id: 3, name: "Add Project", selected: false, path: "/layout/create", icon: "bi bi-receipt" },
+  { id: 4, name: "View Employee", selected: false, path: "/layout/emp", icon: "bi bi-people" },
+  { id: 5, name: "Add Product", selected: false, path: "/layout/product", icon: "bi bi-basket" },
 ]
 
 @Injectable({
@@ -32,13 +31,13 @@ export class ServiceService {
     this.socket?.on('Loginstatus', (msg: any) => {
       console.log("value: ", msg)
       if (msg.success) {
-        sessionStorage.setItem('authuser', "success");
+        sessionStorage.setItem('authuser', JSON.stringify(msg));
         // return true;
         router.navigate(['layout/dashboard'])
         this.toastr.success('Login success')
       } else {
         // return false;
-        this.toastr.error('Cleck Your UserName and Password')
+        this.toastr.error('Check Your UserName and Password')
       }
     })
 

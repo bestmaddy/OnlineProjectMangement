@@ -92,9 +92,9 @@ function GetProduct(data, client) {
 }
 
 async function Login(data, client) {
-    userName = data.userName;
+    Email = data.userName;
     password = data.password;
-    connection.query("select * from user where UserName='" + userName + "'and Password='" + password + "'", function (err, result) {
+    connection.query("select * from user where Email='" + Email + "'and Password='" + password + "'", function (err, result) {
         if (err) {
             client.emit("Loginstatus", "unsuccess");
             console.log("all data: ", result);

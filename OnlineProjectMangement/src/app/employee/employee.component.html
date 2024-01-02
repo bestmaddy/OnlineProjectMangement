@@ -9,38 +9,40 @@
 align-items: center;
 flex-direction: row;
 flex-wrap: wrap;">
-    <div class="material-tbl mt-2" style="width: 50%;">
-        <table class="text-center justify-content-center table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Sr No</th>
-                    <th>Employee Name</th>
-                    <th>Total Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let users of empDetails | orderBy:'y' | paginate
+    <div class="row">
+        <div class="col-6">
+            <table class="text-center justify-content-center table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Employee Name</th>
+                        <th>Total Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let users of empDetails | orderBy:'y' | paginate
         : {
             itemsPerPage: tableSize,
             currentPage: page,
             totalItems: count
           };
             let i = index" [ngClass]="users.y<100?'red':''">
-                    <th>{{i+1}}</th>
-                    <td>{{users.name}}</td>
-                    <td>{{users.y}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-center mt-3">
-            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-            </pagination-controls>
+                        <th>{{i+1}}</th>
+                        <td>{{users.name}}</td>
+                        <td>{{users.y}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
         </div>
-    </div>
-    <div style="width: 50%;">
-        <img [src]="product" alt="product image">
+        <div class="col-6">
+            <img [src]="product" alt="product image">
+        </div>
     </div>
 </div>
 <div class="mt-2 mb-2">
-    <canvasjs-chart  id="chartContainer" class="" [styles]="{width: '100%', height:'auto'}"></canvasjs-chart>
+    <canvasjs-chart id="chartContainer" class="" [styles]="{width: '100%', height:'auto'}"></canvasjs-chart>
 </div>
